@@ -1,0 +1,24 @@
+.button-count {
+  margin-top: 2em;
+  padding: 2em;
+  background-color: #778da9;
+  font-weight: 700;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  color: #0d1b2a;
+  border: none;
+}
+
+.button-count:hover {
+  background-color: #415a77;
+  color: #e0e1dd;
+  transition: .6s all ease;
+}
+
+.counter-container {
+  margin: 1em auto;
+  color: #415a77;
+  font-size: 40pt;
+  font-weight: bold;
+}
