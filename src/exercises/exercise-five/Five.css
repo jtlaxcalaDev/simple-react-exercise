@@ -1,0 +1,11 @@
+.animals-container {
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+}
+
+.animal-item {
+  color: #778da9;
+  font-size: 16pt;
+  margin: .5em auto;
+}

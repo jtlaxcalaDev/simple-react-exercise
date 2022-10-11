@@ -2,7 +2,7 @@ import One from "./exercises/exercise-one/One"
 import Two from "./exercises/exercise-two/Two"
 import Three from './exercises/exercise-three/Three';
 import Four from './exercises/exercise-four/Four';
-import Five from './exercises/exercise-one/One';
+import Five from './exercises/exercise-five/Five';
 import Six from './exercises/exercise-six/Six';
 import Seven from './exercises/exercise-seven/Seven';
 import Eight from './exercises/exercise-eight/Eight';
