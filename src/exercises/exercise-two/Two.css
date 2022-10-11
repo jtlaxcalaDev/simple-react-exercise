@@ -1,0 +1,17 @@
+.button-alert {
+  margin-top: 2em;
+  padding: 2em;
+  background-color: #415a77;
+  font-weight: 700;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  color: #e0e1dd;
+  border: none;
+}
+
+.button-alert:hover {
+  background-color: #e0e1dd;
+  color: #0d1b2a;
+  transition: .6s all ease;
+}
