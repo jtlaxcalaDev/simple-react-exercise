@@ -1,13 +1,30 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: #0d1b2a;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container {
+  margin-top: 4em;
+}
+
+.return {
+  border: 2px solid #778da9;
+  border-radius: 10px;
+  width: 25em;
+  padding: .8em 2em;
+  color: #778da9;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.return:hover {
+  background-color: #415a77;
+  color: #e0e1dd;
+  transition: .3s all ease;
+}
+
+.exercise-title {
+  margin-top: 2em;
+  color: #e0e1dd;
 }

@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import { Link } from 'react-router-dom';
+import { allExercises } from './exercises';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 className='title'>Simple React Exercises</h1>
+      {
+        allExercises.map(exercise => (
+          <div key={exercise.id} className='exercises-container'>
+            <Link to={exercise.route} className='exercise-box'>
+              <div>
+                {exercise.id} : {exercise.name}
+              </div>        
+            </Link>       
+          </div>
+        ))
+      }
+      
     </div>
   );
 }
