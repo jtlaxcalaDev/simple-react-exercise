@@ -1,0 +1,44 @@
+.input-field-container {
+  display: flex;
+  flex-direction: column;
+  width: 20em;
+  text-align: start;
+  margin: 2em auto;
+}
+
+.field {
+  color: #415A77;
+  font-size: 14pt;
+  margin-bottom: .2em;
+}
+
+.text-input {
+  height: 2.8em;
+  border: none;
+  border-radius: 10px;
+  background-color: #1B263B;
+  outline: none;
+  padding-left: 1em;
+  color: #E0E1DD;
+  font-size: 12pt;
+}
+
+.text-input:focus {
+  border: 2px solid #778DA9;
+}
+.great-button {
+  width: 20em;
+  height: 3.5em;
+  background-color: #415A77;
+  border-radius: 10px;
+  border: none;
+  color: #E0E1DD;
+  font-size: 12pt;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.great-button:hover {
+  background-color: #778DA9;
+  transition: .6s all ease
+}
