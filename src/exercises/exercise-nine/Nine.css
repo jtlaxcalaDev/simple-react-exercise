@@ -1,0 +1,104 @@
+.items-list-container {
+  margin: 1em auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 70%;
+}
+
+.item-card {
+  margin: 1em;
+  border-radius: 10px;
+  background-color: transparent;
+  width: 13em;
+  height: 13em;
+  /*border: 1px solid #f1f1f1;*/
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.item-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.reload-button {
+  padding: 0em 1em;
+  height: 3.5em;
+  background-color: #415A77;
+  border-radius: 10px;
+  border: none;
+  color: #E0E1DD;
+  font-size: 12pt;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.reload-button:hover {
+  background-color: #778DA9;
+  transition: .6s all ease
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.item-card:hover .item-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-front, .flip-back {
+  padding: .4em;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /*align-items: center;*/
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-front {
+  background-color: #1B263B;
+}
+
+.card-header {
+  color: #E0E1DD;
+  font-size: 14pts;
+}
+
+.avatar {
+  width: 7em;
+}
+
+.card-footer{
+  font-weight: 500;
+  font-size: 10pt;
+}
+
+/* Style the back side */
+.flip-back {
+  background-color: #415A77;
+  font-size: 10pt;
+  font-weight: 400;
+  transform: rotateY(180deg);
+}
+
+.row-info {
+  padding: .2em 2em .4em 2em ;
+  width: 100%;
+  text-align: left;
+  color: #E0E1DD;
+  
+}
+
+b {
+  
+  color: #1B263B;
+}
