@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ItemCard from './ItemCard'
+import { ErrorBoundary } from "react-error-boundary";
 
 const Nine = () => {
-
   const [itemlist, setItemlist] = useState([])
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState(null);
@@ -20,20 +20,49 @@ const Nine = () => {
             setError(null);
             setIsLoading(false);
           } else {
-            setError("Hubo un error al obtener los datos");
+            setError("Has a error to get data");
           }
         }catch (error) {
-          setError('Hubo un problema al obtener los datos')
+          setError('Has a problem to get data')
         }
       }
       getItems()
     }
   },[isLoading])
 
+  const ItemsView = () => {
+    if(error){
+      throw error
+    }else {
+      return (
+        itemlist.map(item => (
+          <ItemCard 
+          key={item.id} 
+          username={item.username} 
+          avatar={item.avatar} 
+          title={item.employment.title}
+          name={`${item.first_name} ${item.last_name}`}
+          skill={item.employment.key_skill}
+          email={item.email}
+          phone={item.phone_number}
+          />
+        ))
+      )
+    }
+  }
+
+  function ErrorFallback(){
+    return (
+      <div rale="alert">
+        <h2 style={{color: '#E0E1DD', width: '16em'}}>There was an error: {`${error}`}</h2>
+      </div>
+    )
+  }
+
   function handleLoadingChange(){
     setIsLoading(true)
   }
-
+  
   return (
     <>
       <div className="container">
@@ -43,20 +72,9 @@ const Nine = () => {
         </div>
         <button className="reload-button" onClick={handleLoadingChange}> Reload Fetch Random</button>
         <div className="items-list-container">
-          {
-            itemlist.map(item => (
-              <ItemCard 
-              key={item.id} 
-              username={item.username} 
-              avatar={item.avatar} 
-              title={item.employment.title}
-              name={`${item.first_name} ${item.last_name}`}
-              skill={item.employment.key_skill}
-              email={item.email}
-              phone={item.phone_number}
-              />
-            ))
-          }
+          <ErrorBoundary FallbackComponent={ErrorFallback} resetKeys={[error, isLoading]}>
+            <ItemsView />
+          </ErrorBoundary>
         </div>
       </div>
     </>
