@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import CustomButtonIncrement from "./CustomButtonIncrement";
 import DisplayCounter from "./DisplayCounter";
-import { useState } from 'react'
+import { FunctionComponent, useState } from 'react'
 
-const Four = () => {
+const Four: FunctionComponent = () => {
   
   const [count, setCount] = useState(0)
 
