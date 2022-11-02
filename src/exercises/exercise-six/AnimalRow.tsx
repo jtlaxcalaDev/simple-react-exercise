@@ -1,6 +1,13 @@
-const AnimalRow = ({name}) => {
+import { FC } from "react"
+import { animal, animalIcon } from "./Animal"
 
-  let icon = ''
+interface animalProps {
+  name: animal
+}
+
+const AnimalRow: FC<animalProps> = ({ name }) => {
+
+  let icon: animalIcon
 
   switch(name){
     case('dog'):
@@ -22,7 +29,7 @@ const AnimalRow = ({name}) => {
       icon = '🐴'
       break
     default: 
-      icon = ''
+      icon = '🐶'
       break
   }
 

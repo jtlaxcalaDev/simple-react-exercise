@@ -1,10 +1,37 @@
 import { Link } from "react-router-dom";
 import AnimalRow from "./AnimalRow";
+import { IAnimal } from "./Animal";
 import './Six.css'
+import { FunctionComponent } from "react";
 
-const Six = () => {
+export const animalList: IAnimal[] = [
+  {
+    id: 1,
+    name: 'dog', 
+  },
+  {
+    id: 2,
+    name: 'cat', 
+  },
+  {
+    id: 3,
+    name: 'chicken', 
+  },
+  {
+    id: 4,
+    name: 'cow', 
+  },
+  {
+    id: 5,
+    name: 'sheep', 
+  },
+  {
+    id: 6,
+    name: 'horse'
+  }
+]
 
-  const animals = ['dog', 'cat', 'chicken', 'cow', 'sheep', 'horse']
+const Six: FunctionComponent = () => {
   
   return (
     <>
@@ -15,8 +42,8 @@ const Six = () => {
         </div>
         <div className="animals-container">
           {
-            animals.map(animal => (
-              <AnimalRow key={animal} name={animal} />
+            animalList.map(animal => (
+              <AnimalRow key={animal.id} name={animal.name} />
             ) )
           }
         </div>
