@@ -1,6 +1,13 @@
+import { FC } from 'react'
 import './Seven.css'
 
-const TextInput = ({inputName, value, onChangeValue}) => {
+interface InputProps {
+  inputName: string
+  value: string
+  onChangeValue: ( event: any ) => void
+}
+
+const TextInput: FC<InputProps> = ({inputName, value, onChangeValue}) => {
   return (
     <div className="input-field-container">
       <label className="field" htmlFor={inputName}>{inputName}: </label>
