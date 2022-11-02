@@ -19,7 +19,7 @@ interface Exercise {
 
 export const allExercises: Array<Exercise> = [
   {id: '1', route: '/exercise-one', name: 'Hello World!', component: <One />},
-  {id: '2', route: '/exercise-two', name: 'Capturing User Clicks', component: <Two />},
+  {id: '2', route: '/exercise-two', name: 'Capturing User Clicks', component: <Two message="Thanks for your click 😁" />},
   {id: '3', route: '/exercise-three', name: 'Custom Component', component: <Three />},
   {id: '4', route: '/exercise-four', name: 'State and Props', component: <Four />},
   {id: '5', route: '/exercise-five', name: 'Mapping Through A List And Rendering', component: <Five />},

@@ -1,7 +1,18 @@
+import { FunctionComponent } from "react";
 import { Link } from "react-router-dom";
 import './Two.css'
 
-const Two = () => {
+
+type Props = {
+  message: string
+}
+
+const Two: FunctionComponent<Props> = ( props /* : Props (needed?)*/ ) => {
+
+  function handleAlert(): any {
+    alert(props.message)
+  }
+
   return (
     <>
       <div className="container">
@@ -10,7 +21,7 @@ const Two = () => {
           <h2>2 : Capturing User Clicks</h2>
         </div>
         <div className="button-events">
-          <button className="button-alert" onClick={()=>{alert('Thanks for your click 😁')}}>
+          <button className="button-alert" onClick={handleAlert}>
             Click me! 😉
           </button>
         </div>
