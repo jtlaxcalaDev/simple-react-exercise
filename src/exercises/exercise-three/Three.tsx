@@ -1,7 +1,9 @@
+import { FC } from "react";
 import { Link } from "react-router-dom";
 import CustomButton from "./CustomButton";
 
-const Three = () => {
+const Three: FC = () => {
+
   return (
     <>
       <div className="container">
@@ -11,7 +13,7 @@ const Three = () => {
         </div>
         <div className="button-events">
           <CustomButton buttonText='1: click me please 1️⃣' alertMessage='Thank you for your click, Im button 1 💙'/>
-          <CustomButton buttonText='1: click me please 2️⃣' alertMessage='Thank you for your click, Im button 2 💙💙'/>
+          <CustomButton buttonText='2: click me please 2️⃣' alertMessage='Thank you for your click, Im button 2 💙💙'/>
           <CustomButton buttonText='3: click me please 3️⃣' alertMessage='Thank you for your click, Im button 3 💙💙💙'/>
         </div>
       </div>
