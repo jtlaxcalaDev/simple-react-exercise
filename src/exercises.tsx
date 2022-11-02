@@ -1,3 +1,5 @@
+import React, { ReactNode } from "react";
+
 import One from "./exercises/exercise-one/One"
 import Two from "./exercises/exercise-two/Two"
 import Three from './exercises/exercise-three/Three';
@@ -8,7 +10,14 @@ import Seven from './exercises/exercise-seven/Seven';
 import Eight from './exercises/exercise-eight/Eight';
 import Nine from './exercises/exercise-nine/Nine';
 
-export const allExercises = [
+interface Exercise {
+  id: string,
+  route: string,
+  name: string,
+  component: ReactNode
+}
+
+export const allExercises: Array<Exercise> = [
   {id: '1', route: '/exercise-one', name: 'Hello World!', component: <One />},
   {id: '2', route: '/exercise-two', name: 'Capturing User Clicks', component: <Two />},
   {id: '3', route: '/exercise-three', name: 'Custom Component', component: <Three />},
