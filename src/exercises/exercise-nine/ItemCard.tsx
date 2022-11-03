@@ -1,6 +1,8 @@
+import { FC } from 'react';
 import './Nine.css'
+import { ProfileProps } from './Profile';
 
-const ItemCard = ({username, avatar, email, name, title, skill, phone}) => {
+const ItemCard: FC<ProfileProps> = ({username, avatar, email, name, title, skill, phone}) => {
   return (
     <div className="item-card">
       <div className="item-card-inner">

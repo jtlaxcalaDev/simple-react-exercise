@@ -1,21 +1,21 @@
-import { useEffect, useState } from "react";
+import { FC, FunctionComponent, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ItemCard from './ItemCard'
 import { ErrorBoundary } from "react-error-boundary";
 
-const Nine = () => {
-  const [itemlist, setItemlist] = useState([])
-  const [isLoading, setIsLoading] = useState(true)
-  const [error, setError] = useState(null);
+const Nine: FunctionComponent = () => {
+  const [itemlist, setItemlist] = useState<any[]>([])
+  const [isLoading, setIsLoading] = useState<Boolean>(true)
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     if(isLoading){
-      async function getItems() {
+      async function getItems(): Promise<any> {
         try {
-          const res = await fetch('https://random-data-api.com/api/users/random_user?size=10')
+          const res: Response = await fetch('https://random-data-api.com/api/users/random_user?size=10')
 
           if (res.ok) {
-            const data = await res.json();
+            const data: any = await res.json();
             setItemlist(data);
             setError(null);
             setIsLoading(false);
@@ -30,7 +30,7 @@ const Nine = () => {
     }
   },[isLoading])
 
-  const ItemsView = () => {
+  const ItemsView: any /* ¿Que tipo de dato seria? */ = () => {
     if(error){
       throw error
     }else {
@@ -51,15 +51,15 @@ const Nine = () => {
     }
   }
 
-  function ErrorFallback(){
+  const ErrorFallback: FunctionComponent = () => {
     return (
-      <div rale="alert">
+      <div role="alert">
         <h2 style={{color: '#E0E1DD', width: '16em'}}>There was an error: {`${error}`}</h2>
       </div>
     )
   }
 
-  function handleLoadingChange(){
+  function handleLoadingChange(): void{
     setIsLoading(true)
   }
   
