@@ -1,4 +1,4 @@
-import { FC, FunctionComponent, useEffect, useState } from "react";
+import { FunctionComponent, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ItemCard from './ItemCard'
 import { ErrorBoundary } from "react-error-boundary";
