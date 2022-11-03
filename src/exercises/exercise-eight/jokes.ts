@@ -1,4 +1,6 @@
-const jokesList = [ // jokes from https://github.com/elijahmanor/devpun/blob/master/jokes.json
+import { Joke } from "./Joke";
+
+const jokesList: Joke[] = [ // jokes from https://github.com/elijahmanor/devpun/blob/master/jokes.json
   {
     id: 1,
     question: "Why did the child component have such great self-esteem?",

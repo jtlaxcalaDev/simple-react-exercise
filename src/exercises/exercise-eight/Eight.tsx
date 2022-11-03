@@ -2,8 +2,9 @@ import { Link } from "react-router-dom";
 import jokesList from "./jokes";
 import JokeCard from "./JokeCard";
 import './Eight.css'
+import { FunctionComponent } from "react";
 
-const Eight = () => {
+const Eight: FunctionComponent = () => {
   return (
     <>
       <div className="container">
@@ -15,7 +16,7 @@ const Eight = () => {
         <div className="jokes-list-container">
           {
             jokesList.map(joke => (
-              <JokeCard key={joke.id} jokeId={joke.id} question={joke.question} answer={joke.answer} />
+              <JokeCard key={joke.id} id={joke.id} question={joke.question} answer={joke.answer} />
             ))
           }
         </div>
